@@ -1,6 +1,7 @@
 const path = require("path")
 
 module.exports = {
+  devtool: "source-map",
   devServer: {
     static: {
       directory: path.resolve(__dirname, ''), // Specify your content base directory here
