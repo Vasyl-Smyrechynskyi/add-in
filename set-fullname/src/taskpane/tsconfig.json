@@ -1,0 +1,46 @@
+{
+  "include": [
+    "../../src/**/*.d.ts",
+    "../../src/**/*.ts"
+  ],
+  "exclude": [
+    "../../node_modules",
+    "../../dist",
+    "../../e2e"
+  ],
+  "compilerOptions": {
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "types": [
+      "office-js"
+    ],
+    "target": "es2015",
+    "lib": ["es2015", "dom"],
+    "moduleResolution": "node",
+    "module": "commonjs",
+    "strict": true,
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    // "types": [
+    //  // "@types/office-js",
+    //   "node"
+    // ],
+    "resolveJsonModule": true,
+    "baseUrl": "./",
+    "paths": {
+      // "@types/office-js/*": [
+      //   "../../node_modules/@types/office-js/*"
+      // ]
+      // "@app/*": [
+      //   "../../src/taskpane/app/*"
+      // ],
+      // "@env/*": [
+      //   "../../src/environments/*"
+      // ]
+    }
+  }
+}
