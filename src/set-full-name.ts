@@ -4,15 +4,11 @@
  */
 import "zone.js"; // Required for Angular
 import { platformBrowserDynamic } from "@angular/platform-browser-dynamic";
-import AppModule from "./app/app.module";
+import AppModule from "./app-module/app.module";
 
 /* global console, document, Office */
-
-
 Office.onReady(() => {
-  console.log("here")
-  document.getElementById("sideload-msg")!.style.display = "none";
-  console.log("here 1")
+  //document.getElementById("sideload-msg")!.style.display = "none";
   // Bootstrap the app
   platformBrowserDynamic()
     .bootstrapModule(AppModule)

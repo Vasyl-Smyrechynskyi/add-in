@@ -1,12 +1,12 @@
 {
   "include": [
-    "../../src/**/*.d.ts",
-    "../../src/**/*.ts"
+    "./**/*.d.ts",
+    "./**/*.ts"
   ],
   "exclude": [
-    "../../node_modules",
-    "../../dist",
-    "../../e2e"
+    "../node_modules",
+    "../dist",
+    "../e2e"
   ],
   "compilerOptions": {
     "typeRoots": [
@@ -36,7 +36,7 @@
       //   "../../node_modules/@types/office-js/*"
       // ]
       // "@app/*": [
-      //   "../../src/taskpane/app/*"
+      //   "../../src/set-full-name/app/*"
       // ],
       // "@env/*": [
       //   "../../src/environments/*"

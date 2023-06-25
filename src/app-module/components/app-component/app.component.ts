@@ -7,7 +7,7 @@ import { Component } from "@angular/core";
   templateUrl: "./app.component.html",
 })
 export default class AppComponent {
-  welcomeMessage = "Welcome";
+  private welcomeMessage = "";
 
   async run() {
     try {
