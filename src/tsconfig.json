@@ -5,8 +5,7 @@
   ],
   "exclude": [
     "../node_modules",
-    "../dist",
-    "../e2e"
+    "../dist"
   ],
   "compilerOptions": {
     "typeRoots": [
@@ -25,22 +24,7 @@
     "emitDecoratorMetadata": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    // "types": [
-    //  // "@types/office-js",
-    //   "node"
-    // ],
     "resolveJsonModule": true,
     "baseUrl": "./",
-    "paths": {
-      // "@types/office-js/*": [
-      //   "../../node_modules/@types/office-js/*"
-      // ]
-      // "@app/*": [
-      //   "../../src/set-full-name/app/*"
-      // ],
-      // "@env/*": [
-      //   "../../src/environments/*"
-      // ]
-    }
   }
 }
