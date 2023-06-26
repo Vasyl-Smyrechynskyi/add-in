@@ -10,11 +10,21 @@ import { XmlFullNameFormatter } from "../services/strategies/full-name-formatter
 
 
 @NgModule({
-  declarations: [AppComponent, FullNameFormComponent ],
-  imports: [BrowserModule, FormsModule, ReactiveFormsModule],
+  declarations: [
+    AppComponent,
+    FullNameFormComponent
+  ],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    ReactiveFormsModule
+  ],
   bootstrap: [AppComponent],
   providers: [
-    JsonFullNameFormatter, XmlFullNameFormatter, FullNameFormatterService, FullNameService
+    JsonFullNameFormatter,
+    XmlFullNameFormatter,
+    FullNameFormatterService, 
+    FullNameService
   ],
 })
 export default class AppModule {}
