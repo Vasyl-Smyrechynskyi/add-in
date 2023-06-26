@@ -1,25 +1,35 @@
-<form [formGroup]="form" (ngSubmit)="setFullName()">
+<form [formGroup]="form" (ngSubmit)="setFullName()" id="form">
     <div>
-      <label for="name">Name:</label>
-      <input id="name" type="text" formControlName="name">
-      <div *ngIf="form.controls.name.invalid && form.controls.name.touched">
-        <div *ngIf="form.controls.name.errors.required">Name is required.</div>
-        <div *ngIf="form.controls.name.errors?.maxlength">Name must be at most 20 characters long.</div>
-        <div *ngIf="form.controls.name.errors?.pattern">Name can only contain characters and whitespace.</div>
+      <div class="input-wrap">
+        <label for="name">Name:</label>
+        <input id="name" type="text" formControlName="name">
+      </div>
+      <div *ngIf="form.controls.name.invalid && form.controls.name.touched" class="error-text">
+        <p *ngIf="form.controls.name.errors.required">Name is required.</p>
+        <p *ngIf="form.controls.name.errors?.maxlength">Name must be at most 20 characters long.</p>
+        <p *ngIf="form.controls.name.errors?.pattern">Name can only contain characters and whitespace.</p>
       </div>
     </div>
     <div>
-      <label for="surname">Surname:</label>
-      <input id="surname" type="text" formControlName="surname">
-      <div *ngIf="form.controls.surname.invalid && form.controls.surname.touched">Surname is required.</div>
-      <div *ngIf="form.controls.surname.errors?.maxlength">Name must be at most 25 characters long.</div>
-      <div *ngIf="form.controls.surname.errors?.pattern">Name can only contain characters and whitespace.</div>
+      <div class="input-wrap">
+        <label for="surname">Surname:</label>
+        <input id="surname" type="text" formControlName="surname">
+      </div>
+      <div *ngIf="form.controls.surname.invalid && form.controls.surname.touched" class="error-text">
+        <p *ngIf="form.controls.surname.errors.required">Surname is required.</p>
+        <p *ngIf="form.controls.surname.errors?.maxlength">Surname must be at most 25 characters long.</p>
+        <p *ngIf="form.controls.surname.errors?.pattern">Surname can only contain characters and whitespace.</p>
+      </div>
     </div>
-    <label for="format">Format:</label>
-    <select id="format" formControlName="format">
-      <option value="json">JSON</option>
-      <option value="xml">XML</option>
-    </select>
+    <div>
+      <div class="input-wrap">
+        <label for="format">Format:</label>
+        <select id="format" formControlName="format">
+          <option value="json">JSON</option>
+          <option value="xml">XML</option>
+        </select>
+      </div>
+    </div>
   
     <button type="submit" [disabled]="form.invalid">SET</button>
 </form>

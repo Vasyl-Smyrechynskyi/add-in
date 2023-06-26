@@ -1,10 +1,11 @@
-import { Component } from "@angular/core";
+import { Component, ViewEncapsulation } from "@angular/core";
 
 /* global console, Excel */
 
 @Component({
   selector: "app-home",
   templateUrl: "./app.component.html",
+  encapsulation: ViewEncapsulation.None, 
 })
 export default class AppComponent {
   fullName: string = "";

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, ViewEncapsulation, EventEmitter, OnInit, Output, Inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { FullNameService } from '../../../services/full-name.service';
 import { FormatType } from '../../../enums/format-type';
@@ -8,21 +8,20 @@ import { FormatType } from '../../../enums/format-type';
   selector: 'full-name-form',
   templateUrl: './full-name-form.component.html',
   styleUrls: ['./full-name-form.component.css'],
+  encapsulation: ViewEncapsulation.None, 
 })
 export default class FullNameFormComponent implements OnInit {
   @Output() fullNameChanged: EventEmitter<string> = new EventEmitter();
-  private fullNameService: FullNameService;
-  private formBuilder: FormBuilder;
+  
   selectedFormat: FormatType = FormatType.XML;
   form: FormGroup;
   name: string = "";
   surname: string = "";
 
   constructor(
+    @Inject(FormBuilder) private formBuilder: FormBuilder,
+    @Inject(FullNameService) private fullNameService: FullNameService
     ) {
-      this.formBuilder = new FormBuilder();
-      this.fullNameService = new FullNameService();
-
       this.form = this.formBuilder.group({
         name: ['', [
           Validators.required,
@@ -45,7 +44,6 @@ export default class FullNameFormComponent implements OnInit {
       
       if (this.form.value.format !== this.selectedFormat){
         this.selectedFormat = this.form.value.format;
-        console.log(this.selectedFormat, 'selected');
       }
     });
   }
